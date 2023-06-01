@@ -47,8 +47,11 @@ return require('packer').startup(function(use)
 
 }
 
-use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-})
+    use({ 'mhartington/formatter.nvim' })
+    use 'mfussenegger/nvim-dap' -- DEBUG ADAPTER PROTOCOL
+    use 'mfussenegger/nvim-lint'
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
 end)
