@@ -13,13 +13,24 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
+    --colorschemes
     use({ 'rose-pine/neovim', as = 'rose-pine' })
+    use({'bluz71/vim-nightfly-colors', as = 'nightfly'})
+    use({'pineapplegiant/spaceduck'})
 
     use({'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}})
+
+    --statusline/tabline
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
 
     --  use('nvim-treesitter/playground') --Plugin to have access to treesitter data
 
     use('theprimeagen/harpoon')
+
+    use('theprimeagen/vim-be-good')
 
     use('mbbill/undotree')
 
